@@ -289,9 +289,7 @@ If you use this dataset, prompts, or evaluation framework in your research, plea
 
 ## Contact
 
-| Name | Role | Contact |
-|---|---|---|
-| Mohammad Saim | Lead Author | [saimmd@mail.uc.edu](mailto:saimmd@mail.uc.edu) |
+Mohammad Saim | [saimmd@mail.uc.edu](mailto:saimmd@mail.uc.edu) |
 
 For questions about the dataset, code, or paper, please open a [GitHub Issue](https://github.com/cincynlp/EmoMoral/issues).
 
