@@ -1,0 +1,26 @@
+# ── LLM Inference ─────────────────────────────────────────────────────────────
+torch>=2.9.0
+transformers>=4.57.0
+safetensors>=0.6.0
+huggingface-hub>=0.36.0
+
+# ── Proprietary Model APIs ────────────────────────────────────────────────────
+openai>=1.0.0
+google-genai>=1.51.0          # Gemini 3 Flash  (from google import genai)
+google-generativeai>=0.8.0    # legacy Gemini client (import google.generativeai)
+
+# ── Data Processing ───────────────────────────────────────────────────────────
+pandas>=2.3.0
+numpy>=2.2.0
+
+# ── Statistics & Evaluation ───────────────────────────────────────────────────
+scipy>=1.15.0
+scikit-learn>=1.5.0
+krippendorff>=0.6.0           # inter-annotator agreement
+
+# ── Visualisation ─────────────────────────────────────────────────────────────
+matplotlib>=3.10.0
+seaborn>=0.13.0
+
+# ── Utilities ─────────────────────────────────────────────────────────────────
+tqdm>=4.67.0
