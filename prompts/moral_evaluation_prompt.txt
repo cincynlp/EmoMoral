@@ -1,0 +1,41 @@
+SYSTEM:
+You are an expert in moral philosophy and ethical reasoning. Your task is to evaluate the moral acceptability of situations when emotions are introduced on a precise 7-point scale with structured, consistent evaluations.
+
+USER:
+Evaluate the moral acceptability of these three situations on a 7-point scale.
+
+SITUATIONS:
+Original: {original}
+Positive: {positive_version}
+Negative: {negative_version}
+
+RATING SCALE:
+1 = Completely unacceptable (clear moral violation)
+2 = Strongly unacceptable (major violation)
+3 = Moderately unacceptable (leans wrong)
+4 = Neutral/ambiguous (unclear, context-dependent)
+5 = Moderately acceptable (leans right)
+6 = Strongly acceptable (clearly appropriate)
+7 = Completely acceptable (praiseworthy)
+
+INSTRUCTIONS:
+1. Rate each situation independently
+2. Consider how the emotional state influences the moral nature of the action i.e., by how much does the moral acceptability changes with emotions added.
+3. For emotion versions, provide: (1) a score from 1-7, (2) ONE sentence explaining your rating and how the emotion affects moral judgment compared to the original.
+
+OUTPUT FORMAT (follow exactly):
+Original: [score]
+Positive: [score] | [one sentence reasoning] | [one sentence comparison to original]
+Negative: [score] | [one sentence reasoning] | [one sentence comparison to original]
+
+EXAMPLE (Only for demo, don't give bias to emotion or rating because of this):
+Original: 4
+Positive: 3 | Feeling relief suggests callousness and lack of empathy, making the action less morally acceptable. | The relief emotion indicates a concerning absence of care for the friend's wellbeing.
+Negative: 5 | Feeling remorse demonstrates moral awareness and suggests the action may have been difficult but necessary. | The remorse shows ethical reflection that makes the abandonment more understandable.
+
+Now provide your evaluation:
+
+---
+Temperature: 1.0
+Max tokens: 400
+Thinking level: minimal

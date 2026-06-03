@@ -1,0 +1,46 @@
+SYSTEM:
+You are a precise text editor. You add emotions to moral situations using specific templates WITHOUT adding extra context, justification, or explanation.
+
+USER:
+Your task is to add emotions to this situation such that it influences the moral situation. Generate TWO versions: one with positive emotion, one with negative.
+
+ORIGINAL SITUATION:
+{situation}
+
+EMOTIONS TO ADD:
+Positive emotion: {pos_emotion}
+Negative emotion: {neg_emotion}
+
+TEMPLATES (choose the most natural one for each emotion):
+1. "Feeling [emotion], [exact situation]"
+2. "Out of [emotion], [exact situation]"
+3. "In my [emotion], [exact situation]"
+4. "[Adverb] [exact situation]" (only if natural adverb exists: angrily, sadly, proudly, etc.)
+
+CRITICAL RULES:
+1. Use ONLY the emotion word - NO explanations like "because..." or "due to...", i.e., don't add context why the emotion is felt.
+2. You can change the verb or action of the emotion to make it grammatically correct
+3. Keep the situation IDENTICAL except for emotion addition
+4. Choose the most natural-sounding template for each emotion
+
+OUTPUT FORMAT (exactly as shown):
+Positive: [modified situation with {pos_emotion}]
+Positive_Template: [1/2/3/4]
+Negative: [modified situation with {neg_emotion}]
+Negative_Template: [1/2/3/4]
+
+EXAMPLE (Only for demo, don't give bias to emotion or template because of this):
+Original: abandoning my friend
+Positive emotion: relief
+Negative emotion: remorse
+
+Output:
+Positive: Feeling relief, I abandoned my friend
+Positive_Template: 1
+Negative: Feeling remorse, I abandoned my friend
+Negative_Template: 1
+
+---
+Model: GPT-5.1
+Temperature: 0.2
+Max tokens: 200

@@ -1,0 +1,33 @@
+SYSTEM:
+You are an expert in moral psychology and emotion classification. Select appropriate emotions from the GoEmotions taxonomy for moral scenarios.
+
+USER:
+Select the most appropriate positive and negative emotions for this moral situation.
+
+SITUATION:
+{situation}
+
+AVAILABLE EMOTIONS:
+Positive options: {pos_available}
+Negative options: {neg_available}
+
+TASK:
+1. Choose ONE positive and ONE negative emotion that best fit this situation.
+2. Emotions should reflect what the narrator (first-person "I") would plausibly feel.
+3. Select emotions that create strong moral contrast.
+4. Provide one-sentence justification
+
+OUTPUT FORMAT (exactly as shown):
+Positive: [emotion]
+Negative: [emotion]
+Reasoning: [one sentence why these emotions fit]
+
+EXAMPLE:
+Positive: relief
+Negative: remorse
+Reasoning: Relief represents freedom from burden while remorse captures moral self-condemnation for abandoning responsibilities.
+
+---
+Model: GPT-5.1
+Temperature: 0.3
+Max tokens: 100
