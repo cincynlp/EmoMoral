@@ -32,10 +32,9 @@ Large language models have been extensively studied for emotion recognition and 
 | Contribution | Description |
 |---|---|
 | Emotion-Induction Pipeline | A two-step GPT-5.1 pipeline that selects contextually appropriate emotions and rewrites moral situations using natural templates |
-| Multi-dataset Evaluation | Systematic evaluation across three morally diverse datasets (AITA, NAITA, Justice) |
-| Multi-model Benchmark | Ratings from 9 models spanning open-source (Llama, Qwen) and proprietary (GPT-5.1, Gemini 3 Flash, GPT-OSS-20B) families |
-| Human Annotation Study | Inter-annotator agreement study (Krippendorff's α = 0.56) establishing the human baseline |
-| Emotion Distribution Control | Quota-balanced selection ensuring even coverage across 6 positive and 6 negative emotions |
+| Multi-dataset Evaluation | Systematic evaluation across two morally diverse datasets |
+| Multi-model Benchmark | Ratings from 7 models spanning open-source (Llama, Qwen) and proprietary (GPT-5.1, Gemini 3 Flash, GPT-OSS-20B) families |
+| Human Annotation Study | Inter-annotator agreement study establishing the human baseline |
 
 ---
 
@@ -112,7 +111,7 @@ pip install -r requirements.txt
 | `transformers` | Loading and running open-source LLMs |
 | `torch` | GPU inference backend |
 | `openai` | GPT-5.1 / GPT-OSS API access |
-| `google-generativeai` / `google-genai` | Gemini 3 Flash API access |
+| `google-genai` | Gemini 3 Flash API access |
 | `pandas` | Dataset loading and manipulation |
 | `safetensors` | Efficient model weight loading |
 
@@ -135,10 +134,9 @@ The following open-source models are used for evaluation. Download via Hugging F
 | Model | Size | Hugging Face Link |
 |---|---|---|
 | Meta-Llama 3.1 Instruct | 8B | [meta-llama/Meta-Llama-3.1-8B-Instruct](https://huggingface.co/meta-llama/Meta-Llama-3.1-8B-Instruct) |
-| Meta-Llama 3.1 Instruct | 70B | [meta-llama/Meta-Llama-3.1-70B-Instruct](https://huggingface.co/meta-llama/Meta-Llama-3.1-70B-Instruct) |
+| Meta-Llama 3.1 Instruct | 70B | [meta-llama/Meta-Llama-3.3-70B-Instruct](https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct) |
 | Qwen3 | 8B | [Qwen/Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B) |
-| Qwen3 | 30B | [Qwen/Qwen3-30B-A3B](https://huggingface.co/Qwen/Qwen3-30B-A3B) |
-| Qwen3 | 32B | [Qwen/Qwen3-32B](https://huggingface.co/Qwen/Qwen3-32B) |
+| Qwen3 | 30B | [Qwen/Qwen3-30B-A3B-Instruct-2507](https://huggingface.co/Qwen/Qwen3-30B-A3B-Instruct-2507) |
 | GPT-OSS | 20B | [openai/gpt-oss-20b](https://huggingface.co/openai/gpt-oss-20b) |
 
 Models are automatically downloaded on first run via `transformers`. To pre-download:
@@ -151,24 +149,22 @@ huggingface-cli download meta-llama/Meta-Llama-3.1-8B-Instruct
 
 ## Datasets
 
-### AITA & NAITA
+### Social-Chem (AITA)
 
-Sourced from Reddit's [r/AmItheAsshole](https://www.reddit.com/r/AmItheAsshole/) community — a large-scale, naturally occurring corpus of first-person moral dilemmas with community judgments.
+Sourced from [Social Chemistry 101](https://maxwellforbes.com/social-chemistry/) particulary Reddit's [r/AmItheAsshole](https://www.reddit.com/r/AmItheAsshole/) community — a large-scale, naturally occurring corpus of first-person moral dilemmas with community judgments.
 
-- **AITA:** Situations judged as morally questionable by the community ("You Are the Asshole")
-- **NAITA:** Situations judged as morally acceptable ("Not the Asshole")
+- **AITA:** Situations judged as morally questionable/acceptable by the community ("You Are/You are Not the Asshole")
 
 Each record is a short first-person moral scenario (e.g., *"I told my roommate to move out without notice"*).
 
 ### Justice Scenarios
 
-Drawn from the [Social Chemistry 101](https://maxwellforbes.com/social-chemistry/) dataset — a large-scale collection of social norms and ethical judgments grounded in everyday situations.
+Drawn from the [ETHICS](https://github.com/hendrycks/ethics) dataset — a large-scale collection of social norms and ethical judgments grounded in everyday situations.
 
 | Dataset | # Situations | Domain |
 |---|---|---|
-| AITA | ~500 | Reddit moral dilemmas (ATA judgments) |
-| NAITA | ~500 | Reddit moral dilemmas (NTA judgments) |
-| Justice | ~500 | Social norm / justice scenarios |
+| AITA | ~4678 | Reddit moral dilemmas (ATA judgments) |
+| Justice | ~1008 | Social norm / justice scenarios |
 
 ---
 
@@ -293,10 +289,7 @@ If you use this dataset, prompts, or evaluation framework in your research, plea
 
 ## Contact
 
-| Name | Role | Contact |
-|---|---|---|
-| Mohammad Saim | Lead Author | [saimthis1997@gmail.com](mailto:saimthis1997@gmail.com) |
-| Tianyu Jiang | Co-Author | — |
+Mohammad Saim | [saimmd@mail.uc.edu](mailto:saimmd@mail.uc.edu) |
 
 For questions about the dataset, code, or paper, please open a [GitHub Issue](https://github.com/cincynlp/EmoMoral/issues).
 
